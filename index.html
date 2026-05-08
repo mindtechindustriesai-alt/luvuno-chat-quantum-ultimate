@@ -21,10 +21,8 @@
         :root {
             --primary: #00B4D8;
             --primary-dark: #0096C7;
-            --primary-glow: rgba(0,180,216,0.4);
             --secondary: #00F5D4;
             --quantum: #8A2BE2;
-            --quantum-glow: rgba(138,43,226,0.5);
             --success: #00FF88;
             --danger: #EF476F;
             --dark-bg: #05080F;
@@ -38,29 +36,14 @@
             --base-font-size: 16px;
         }
         
-        html, body {
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            overflow: hidden;
-            -webkit-tap-highlight-color: transparent;
-        }
+        html, body { height: 100%; width: 100%; position: fixed; overflow: hidden; -webkit-tap-highlight-color: transparent; }
+        body { font-family: var(--font-exo); background: var(--dark-bg); color: var(--text-primary); font-size: var(--base-font-size); }
         
-        body { 
-            font-family: var(--font-exo); 
-            background: var(--dark-bg); 
-            color: var(--text-primary); 
-            font-size: var(--base-font-size);
-        }
-        
-        /* Clean message rendering - NO BRACKETS */
         .message-text p { margin-bottom: 0.75em; line-height: 1.5; }
-        .message-text strong { color: var(--secondary); font-weight: 700; }
-        .message-text em { color: var(--primary); font-style: italic; }
-        .message-text ul, .message-text ol { margin: 0.5em 0 0.5em 1.5em; }
-        .message-text li { margin: 0.25em 0; }
-        .message-text code { font-family: var(--font-mono); background: rgba(0,0,0,0.3); padding: 0.125rem 0.375rem; border-radius: 6px; font-size: 0.85rem; }
-        .message-text pre { background: rgba(0,0,0,0.4); padding: 0.75rem; border-radius: 12px; overflow-x: auto; font-family: var(--font-mono); font-size: 0.8rem; margin: 0.75rem 0; }
+        .message-text strong { color: var(--secondary); }
+        .message-text em { color: var(--primary); }
+        .message-text code { font-family: var(--font-mono); background: rgba(0,0,0,0.3); padding: 2px 5px; border-radius: 5px; }
+        .message-text pre { background: rgba(0,0,0,0.4); padding: 10px; border-radius: 10px; overflow-x: auto; }
         
         #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
         .app-container { display: flex; height: 100%; width: 100%; position: relative; z-index: 1; }
@@ -88,9 +71,8 @@
             cursor: pointer;
             font-size: 13px;
             margin-bottom: 10px;
-            transition: all 0.2s;
         }
-        .new-chat-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--quantum-glow); }
+        .new-chat-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(138,43,226,0.5); }
         .status-badge {
             background: rgba(138,43,226,0.2);
             border: 1px solid var(--quantum);
@@ -108,12 +90,11 @@
             margin-bottom: 6px;
             cursor: pointer;
             border: 1px solid transparent;
-            transition: all 0.2s;
         }
         .history-item:hover { background: rgba(0,180,216,0.1); border-color: var(--glass-border); }
         .history-item.active { background: linear-gradient(135deg, rgba(0,180,216,0.15), rgba(138,43,226,0.1)); border-left: 3px solid var(--primary); }
         .history-title { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .history-time { font-size: 9px; color: var(--text-secondary); margin-top: 4px; font-family: var(--font-mono); }
+        .history-time { font-size: 9px; color: var(--text-secondary); margin-top: 4px; }
         
         .sidebar-bottom {
             margin-top: auto;
@@ -127,7 +108,6 @@
             padding: 8px;
             border-radius: 16px;
             cursor: pointer;
-            transition: all 0.2s;
             background: rgba(255,255,255,0.03);
             margin-bottom: 10px;
         }
@@ -146,7 +126,7 @@
         .profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .profile-info { flex: 1; min-width: 0; }
         .profile-name { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .profile-email { font-size: 9px; color: var(--text-secondary); font-family: var(--font-mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .profile-email { font-size: 9px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .sidebar-menu-item {
             display: flex;
             align-items: center;
@@ -154,13 +134,11 @@
             padding: 8px;
             border-radius: 12px;
             cursor: pointer;
-            transition: all 0.2s;
             color: var(--text-secondary);
             font-size: 12px;
         }
         .sidebar-menu-item:hover { background: rgba(0,180,216,0.1); color: var(--text-primary); }
         .logout-item { color: var(--danger); }
-        .logout-item:hover { background: rgba(239,71,111,0.15); color: var(--danger); }
         
         /* Main Chat */
         .main-chat {
@@ -186,7 +164,7 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-        .main-logo { height: 35px; width: auto; filter: drop-shadow(0 0 10px var(--quantum-glow)); }
+        .main-logo { height: 35px; width: auto; filter: drop-shadow(0 0 10px rgba(138,43,226,0.5)); }
         .mode-toggle {
             background: rgba(138,43,226,0.2);
             border: 1px solid var(--quantum);
@@ -196,7 +174,6 @@
             align-items: center;
             gap: 6px;
             cursor: pointer;
-            transition: all 0.2s;
             font-size: 10px;
         }
         .mode-toggle.offline { background: rgba(239,71,111,0.15); border-color: var(--danger); }
@@ -210,16 +187,7 @@
             color: var(--success);
             white-space: nowrap;
         }
-        .offline-badge {
-            background: rgba(239,71,111,0.15);
-            border: 1px solid var(--danger);
-            border-radius: 60px;
-            padding: 5px 10px;
-            font-size: 9px;
-            font-family: var(--font-mono);
-            color: var(--danger);
-            white-space: nowrap;
-        }
+        .offline-badge { background: rgba(239,71,111,0.15); border: 1px solid var(--danger); border-radius: 60px; padding: 5px 10px; font-size: 9px; color: var(--danger); }
         .export-btn {
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--glass-border);
@@ -228,19 +196,11 @@
             color: var(--text-secondary);
             cursor: pointer;
             font-size: 11px;
-            transition: all 0.2s;
             white-space: nowrap;
         }
         .export-btn:hover { background: var(--primary); color: white; }
         
-        /* Skills */
-        .skills-primary {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 10px 0;
-        }
+        .skills-primary { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
         .skill-btn {
             background: rgba(10,15,26,0.8);
             border: 1px solid var(--glass-border);
@@ -250,13 +210,12 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
-            transition: all 0.2s;
             font-size: 10px;
             font-weight: 600;
             color: var(--text-secondary);
         }
         .skill-btn i { font-size: 11px; }
-        .skill-btn:hover { background: rgba(0,180,216,0.2); border-color: var(--primary); color: var(--primary); }
+        .skill-btn:hover { background: rgba(0,180,216,0.2); color: var(--primary); }
         .skill-btn.active { background: linear-gradient(135deg, rgba(0,180,216,0.3), rgba(138,43,226,0.2)); color: var(--secondary); }
         
         .skills-dropdown { position: relative; display: inline-block; }
@@ -272,15 +231,7 @@
         .skills-dropdown:hover .skills-dropdown-content { display: block; }
         .skills-dropdown-content .skill-btn { width: 100%; border-radius: 0; border: none; margin: 0; padding: 8px 12px; text-align: left; }
         
-        /* Controls */
-        .control-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 8px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+        .control-row { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; flex-wrap: wrap; gap: 8px; }
         .speed-control {
             display: flex;
             align-items: center;
@@ -293,7 +244,7 @@
         }
         .speed-control label { font-size: 10px; font-family: var(--font-mono); }
         .speed-control input { flex: 1; max-width: 80px; cursor: pointer; }
-        .speed-control span { font-size: 10px; font-family: var(--font-mono); color: var(--secondary); min-width: 35px; }
+        .speed-control span { font-size: 10px; color: var(--secondary); min-width: 35px; }
         
         .quantum-think-box {
             background: rgba(138,43,226,0.15);
@@ -304,13 +255,11 @@
             align-items: center;
             gap: 6px;
             cursor: pointer;
-            transition: all 0.2s;
             white-space: nowrap;
         }
         .quantum-think-box.active { background: rgba(0,255,136,0.15); border-color: var(--success); }
         .quantum-think-text { font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--secondary); }
         
-        /* Messages Container */
         .messages-container {
             flex: 1;
             overflow-y: auto;
@@ -321,12 +270,7 @@
             gap: 16px;
             min-height: 0;
         }
-        .message {
-            display: flex;
-            gap: 10px;
-            max-width: 90%;
-            animation: fadeInUp 0.2s ease;
-        }
+        .message { display: flex; gap: 10px; max-width: 90%; animation: fadeInUp 0.2s ease; }
         .message.user { align-self: flex-end; flex-direction: row-reverse; }
         .message-avatar {
             width: 32px; height: 32px;
@@ -344,39 +288,16 @@
             border-radius: 20px;
             font-size: 0.9rem;
             line-height: 1.5;
-            max-width: 100%;
             word-wrap: break-word;
         }
         .message.user .message-content { background: linear-gradient(135deg, var(--quantum), var(--primary)); }
         .message-time { font-size: 0.65rem; opacity: 0.5; margin-top: 6px; }
         
-        /* Action Buttons */
-        .message-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 8px;
-            padding-top: 6px;
-            border-top: 1px solid var(--glass-border);
-        }
-        .message-action {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: all 0.2s;
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-        }
+        .message-actions { display: flex; gap: 12px; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--glass-border); }
+        .message-action { display: flex; align-items: center; gap: 4px; cursor: pointer; opacity: 0.6; font-size: 0.7rem; color: var(--text-secondary); }
         .message-action:hover { opacity: 1; color: var(--primary); }
         
-        /* Input Area */
-        .input-area { 
-            padding: 12px 16px; 
-            border-top: 1px solid var(--glass-border); 
-            background: rgba(5,8,15,0.9);
-            flex-shrink: 0;
-        }
+        .input-area { padding: 12px 16px; border-top: 1px solid var(--glass-border); background: rgba(5,8,15,0.9); flex-shrink: 0; }
         .input-wrapper { display: flex; gap: 8px; align-items: flex-end; }
         .input-btn {
             background: rgba(255,255,255,0.05);
@@ -386,7 +307,6 @@
             color: var(--text-secondary);
             cursor: pointer;
             font-size: 16px;
-            transition: all 0.2s;
             flex-shrink: 0;
         }
         .input-btn:hover { background: var(--primary); color: white; }
@@ -415,10 +335,9 @@
             border-radius: 50%;
             color: white;
             cursor: pointer;
-            transition: all 0.2s;
             flex-shrink: 0;
         }
-        .send-btn:hover { transform: scale(1.05); box-shadow: 0 0 10px var(--primary-glow); }
+        .send-btn:hover { transform: scale(1.05); box-shadow: 0 0 10px rgba(0,180,216,0.4); }
         .stop-btn {
             background: var(--danger);
             border: none;
@@ -436,145 +355,37 @@
         @keyframes typing { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-5px); opacity: 1; } }
         
         .scroll-down-btn {
-            position: fixed;
-            bottom: 80px;
-            right: 16px;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--quantum);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            box-shadow: 0 4px 15px var(--quantum-glow);
+            position: fixed; bottom: 80px; right: 16px; width: 44px; height: 44px; border-radius: 50%;
+            background: var(--quantum); color: white; border: none; cursor: pointer; display: none;
+            align-items: center; justify-content: center; z-index: 100; box-shadow: 0 4px 15px rgba(138,43,226,0.5);
         }
         .scroll-down-btn.show { display: flex; }
         
-        /* Footer */
-        .footer {
-            padding: 8px 16px;
-            border-top: 1px solid var(--glass-border);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-        }
+        .footer { padding: 8px 16px; border-top: 1px solid var(--glass-border); display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; flex-shrink: 0; }
         .footer-logo { height: 28px; width: auto; opacity: 0.6; transition: all 0.2s; }
         .footer-logo:hover { opacity: 1; }
         
-        /* Modals */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            backdrop-filter: blur(20px);
-            z-index: 3000;
-            align-items: center;
-            justify-content: center;
-        }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(20px); z-index: 3000; align-items: center; justify-content: center; }
         .modal.active { display: flex; }
-        .modal-content {
-            background: var(--dark-card);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 20px;
-            max-width: 450px;
-            width: 90%;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
-        .modal-close {
-            float: right;
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 20px;
-            cursor: pointer;
-        }
-        .avatar-upload {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-        .avatar-preview {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--quantum), var(--primary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+        .modal-content { background: var(--dark-card); border: 1px solid var(--glass-border); border-radius: 24px; padding: 20px; max-width: 450px; width: 90%; max-height: 85vh; overflow-y: auto; }
+        .modal-close { float: right; background: none; border: none; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
+        .avatar-upload { display: flex; align-items: center; gap: 12px; margin: 15px 0; flex-wrap: wrap; }
+        .avatar-preview { width: 55px; height: 55px; border-radius: 50%; background: linear-gradient(135deg, var(--quantum), var(--primary)); display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .avatar-preview img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Login Overlay */
         .login-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(5,8,15,0.98);
-            backdrop-filter: blur(20px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,8,15,0.98);
+            backdrop-filter: blur(20px); z-index: 2000; display: flex; align-items: center; justify-content: center;
         }
-        .login-card {
-            background: var(--dark-card);
-            border: 1px solid var(--glass-border);
-            border-radius: 32px;
-            padding: 32px 24px;
-            text-align: center;
-            max-width: 380px;
-            width: 90%;
-            margin: 0 auto;
-        }
-        .login-logo {
-            max-width: 240px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 16px;
-            filter: drop-shadow(0 0 15px var(--quantum-glow));
-        }
-        .powered-by {
-            font-size: 9px;
-            font-family: var(--font-mono);
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
+        .login-card { background: var(--dark-card); border: 1px solid var(--glass-border); border-radius: 32px; padding: 32px 24px; text-align: center; max-width: 380px; width: 90%; margin: 0 auto; }
+        .login-logo { max-width: 240px; width: 100%; height: auto; margin-bottom: 16px; filter: drop-shadow(0 0 15px rgba(138,43,226,0.5)); }
+        .powered-by { font-size: 9px; font-family: var(--font-mono); color: var(--text-secondary); margin-bottom: 20px; letter-spacing: 1px; }
         .demo-btn {
             background: linear-gradient(135deg, var(--quantum), var(--primary));
-            border: none;
-            padding: 12px 20px;
-            border-radius: 60px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            color: white;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            border: none; padding: 12px 20px; border-radius: 60px; font-size: 14px; font-weight: 600;
+            cursor: pointer; width: 100%; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;
         }
-        .demo-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px var(--quantum-glow); }
+        .demo-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(138,43,226,0.5); }
         
         .menu-toggle { display: none; position: fixed; top: 12px; left: 12px; z-index: 1001; background: var(--quantum); border: none; color: white; padding: 10px; border-radius: 50%; cursor: pointer; }
         
@@ -587,8 +398,7 @@
             .messages-container { padding: 12px; }
             .message { max-width: 95%; }
             .message-content { padding: 8px 12px; font-size: 0.85rem; }
-            .input-area { padding: 10px 12px; }
-            .chat-input { font-size: 16px; padding: 8px 14px; }
+            .chat-input { font-size: 16px; }
             .skill-btn span { display: none; }
             .skill-btn { padding: 6px 10px; }
             .skill-btn i { margin: 0; font-size: 14px; }
@@ -596,11 +406,10 @@
             .skills-dropdown-btn { padding: 6px 10px; }
             .control-row { flex-direction: column; align-items: stretch; gap: 6px; }
             .speed-control { justify-content: space-between; }
-            .logo-bar { flex-wrap: wrap; justify-content: center; }
-            .footer-logo { height: 22px; gap: 15px; }
-            .footer { gap: 15px; }
             .mode-toggle span { display: none; }
             .mode-toggle { padding: 6px 10px; }
+            .footer-logo { height: 22px; }
+            .footer { gap: 15px; }
         }
     </style>
 </head>
@@ -754,40 +563,37 @@
     
     <script>
         // ============================================================
-        // LUVUNO — ULTIMATE VERSION (ALL UPGRADES INTACT)
+        // LUVUNO — FINAL WORKING VERSION (ENTER SENDS, NO BRACKETS)
         // ============================================================
         
         const BACKEND_URL = "https://luvuno-backend-proxy.onrender.com";
         
-        // ============================================================
-        // MASSIVE OFFLINE KNOWLEDGE BASE
-        // ============================================================
+        // Offline Knowledge Base
         const knowledgeBase = {
             "who are you": "I am Luvuno, a quantum sovereign AI. I operate online using quantum backends or offline using my embedded knowledge base. Your data never leaves your device.",
             "what are you": "I am Luvuno — offline-first AI assistant with quantum verification. I speak English, Zulu, Xhosa, Shona.",
-            "cognac": "Cognac is a town in southwestern France, famous for producing cognac brandy. About 19,000 inhabitants.",
-            "paris": "Paris is the capital of France, the City of Light. Population over 2.1 million.",
-            "london": "London is the capital of England and the UK. Population nearly 9 million.",
+            "cognac": "Cognac is a town in southwestern France, famous for producing cognac brandy.",
+            "paris": "Paris is the capital of France, the City of Light.",
+            "london": "London is the capital of England and the UK.",
             "cape town": "Cape Town is a port city on South Africa's southwest coast, known for Table Mountain.",
             "johannesburg": "Johannesburg is the largest city in South Africa, the City of Gold.",
             "durban": "Durban is a coastal city in South Africa's KwaZulu-Natal province.",
-            "mali": "Mali is a country in West Africa. Capital Bamako. Home to the ancient Mali Empire and Timbuktu.",
-            "africa": "Africa is the world's second-largest continent, 54 countries, over 1.4 billion people, over 2,000 languages.",
-            "winnie mandela": "Winnie Madikizela-Mandela was a South African anti-apartheid activist. Arrested multiple times, 17 months solitary confinement in 1969. Died 2018.",
-            "mandela": "Nelson Mandela was South Africa's first Black president (1994-1999). Spent 27 years in prison. Nobel Peace Prize 1993. Died 2013.",
-            "great zimbabwe": "Great Zimbabwe is a medieval city in Zimbabwe, built by the Shona people between the 11th and 15th centuries. UNESCO World Heritage Site.",
-            "shaka": "Shaka Zulu was the influential king of the Zulu Kingdom from 1816 to 1828. Revolutionized military organization.",
-            "shiva": "Shiva is one of the principal deities of Hinduism, known as the Destroyer within the Trimurti. Represents transformation and the cycle of creation.",
+            "mali": "Mali is a country in West Africa. Capital Bamako. Home to the ancient Mali Empire.",
+            "africa": "Africa is the world's second-largest continent, 54 countries, over 1.4 billion people.",
+            "winnie mandela": "Winnie Madikizela-Mandela was a South African anti-apartheid activist. Died 2018.",
+            "mandela": "Nelson Mandela was South Africa's first Black president. Nobel Peace Prize 1993. Died 2013.",
+            "great zimbabwe": "Great Zimbabwe is a medieval city in Zimbabwe, built by the Shona people. UNESCO World Heritage Site.",
+            "shaka": "Shaka Zulu was the influential king of the Zulu Kingdom from 1816 to 1828.",
+            "shiva": "Shiva is one of the principal deities of Hinduism, known as the Destroyer within the Trimurti.",
             "socrates": "Socrates was a Greek philosopher from Athens (470-399 BCE), founder of Western philosophy.",
-            "giza": "The Pyramids of Giza are ancient Egyptian pyramids built around 2560 BCE. The Great Pyramid is the only surviving wonder of the ancient world.",
-            "atom": "An atom is the smallest unit of ordinary matter. Consists of a nucleus (protons and neutrons) surrounded by electrons.",
-            "quantum": "Quantum computing uses qubits that can exist in superposition, processing many possibilities simultaneously. Entanglement links qubits so the state of one affects another instantly.",
+            "giza": "The Pyramids of Giza are ancient Egyptian pyramids built around 2560 BCE.",
+            "atom": "An atom is the smallest unit of ordinary matter.",
+            "quantum": "Quantum computing uses qubits that can exist in superposition, processing many possibilities simultaneously.",
             "photosynthesis": "Photosynthesis is the process by which plants convert sunlight, CO2, and water into glucose and oxygen.",
             "garlic": "Garlic produces allicin when crushed. Allicin has antibacterial, antiviral, and antioxidant properties.",
-            "exercise": "Regular exercise improves cardiovascular health, strengthens muscles and bones, reduces stress, and helps maintain healthy weight.",
+            "exercise": "Regular exercise improves cardiovascular health, strengthens muscles and bones, reduces stress.",
             "investment": "Investment involves committing money to an asset with the expectation of generating income or profit.",
-            "compound interest": "Compound interest is interest calculated on the initial principal and also on the accumulated interest of previous periods.",
-            "default": "I have information on many topics. Try asking about: African history, science, geography, health, finance, or technology. For complex questions, switch to Online mode."
+            "default": "I have information on many topics. Try asking about African history, science, geography, health, finance, or technology."
         };
         
         function getOfflineAnswer(query) {
@@ -795,15 +601,10 @@
             for (const [key, answer] of Object.entries(knowledgeBase)) {
                 if (lower.includes(key)) return answer;
             }
-            if (lower.includes("who is") || lower.includes("what is")) {
-                return "I have information on that topic. Please be more specific or try Online mode.";
-            }
             return knowledgeBase.default;
         }
         
-        // ============================================================
-        // PURE HTML RENDERER - NO BRACKETS
-        // ============================================================
+        // HTML renderer - NO BRACKETS
         function renderToHtml(text) {
             if (!text) return '';
             let processed = text;
@@ -813,17 +614,10 @@
             processed = processed.replace(/\n/g, '<br>');
             processed = '<p>' + processed + '</p>';
             processed = processed.replace(/<p><\/p>/g, '');
-            processed = processed.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-            processed = processed.replace(/<\/?[^>]+(>|$)/g, function(match) {
-                if (match.match(/<\/?(strong|em|p|br|ul|li|ol|h[1-6]|code|pre|blockquote)/)) return match;
-                return '';
-            });
             return processed;
         }
         
-        // ============================================================
-        // SESSION MANAGEMENT
-        // ============================================================
+        // Session management
         let sessionId = sessionStorage.getItem('luvuno_session_id');
         if (!sessionId) {
             sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
@@ -831,11 +625,8 @@
         }
         const getStorageKey = (baseKey) => `${baseKey}_${sessionId}`;
         
-        // ============================================================
-        // STATE
-        // ============================================================
+        // State
         let currentChatId = null;
-        let conversationHistory = [];
         let activeSkill = null;
         let quantumThinkMode = false;
         let currentController = null;
@@ -845,24 +636,20 @@
         let userProfile = JSON.parse(localStorage.getItem('luvuno_profile') || '{"name":"User","email":"user@luvuno.ai","avatar":null}');
         let isOfflineMode = localStorage.getItem('luvuno_offline_mode') === 'true';
         
-        // ============================================================
-        // BACKEND API CALL (ONLINE MODE)
-        // ============================================================
+        // Backend API
         async function sendToBackend(message, retry = 0) {
             if (currentController) currentController.abort();
             currentController = new AbortController();
-            document.getElementById('stopBtn')?.classList.add('show');
-            if (document.getElementById('sendBtn')) document.getElementById('sendBtn').disabled = true;
+            const stopBtn = document.getElementById('stopBtn');
+            if (stopBtn) stopBtn.classList.add('show');
+            const sendButton = document.getElementById('sendBtn');
+            if (sendButton) sendButton.disabled = true;
             isStreaming = true;
             try {
                 const response = await fetch(`${BACKEND_URL}/api/chat`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ 
-                        message: message, 
-                        portal: activeSkill || "quantum", 
-                        system: quantumThinkMode ? "quantumthink" : "standard" 
-                    }),
+                    body: JSON.stringify({ message: message, portal: activeSkill || "quantum" }),
                     signal: currentController.signal
                 });
                 if (!response.ok && retry < 3) {
@@ -880,23 +667,17 @@
                 return "Connection error. Try switching to Offline mode.";
             } finally {
                 currentController = null;
-                document.getElementById('stopBtn')?.classList.remove('show');
-                if (document.getElementById('sendBtn')) document.getElementById('sendBtn').disabled = false;
+                if (stopBtn) stopBtn.classList.remove('show');
+                if (sendButton) sendButton.disabled = false;
                 isStreaming = false;
             }
         }
         
-        // ============================================================
-        // MAIN ANSWER FUNCTION (RESPECTS MODE)
-        // ============================================================
         async function getAnswer(message) {
             if (isOfflineMode) return getOfflineAnswer(message);
             return await sendToBackend(message);
         }
         
-        // ============================================================
-        // STREAMING TYPING
-        // ============================================================
         async function typeMessage(text, sender) {
             const container = document.getElementById('messagesContainer');
             const messageDiv = document.createElement('div');
@@ -934,11 +715,10 @@
             }
             container.scrollTop = container.scrollHeight;
             if (currentChatId) {
-                const chatsKey = getStorageKey('luvuno_chats');
-                let chats = JSON.parse(localStorage.getItem(chatsKey) || '{}');
+                let chats = JSON.parse(localStorage.getItem(getStorageKey('luvuno_chats')) || '{}');
                 if (!chats[currentChatId]) chats[currentChatId] = [];
                 chats[currentChatId].push({ text, sender, timestamp: new Date().toISOString() });
-                localStorage.setItem(chatsKey, JSON.stringify(chats));
+                localStorage.setItem(getStorageKey('luvuno_chats'), JSON.stringify(chats));
                 let historyList = JSON.parse(localStorage.getItem(getStorageKey('luvuno_history_list')) || '[]');
                 if (!historyList.includes(currentChatId)) {
                     historyList.unshift(currentChatId);
@@ -950,6 +730,7 @@
         }
         
         async function processUserInput(input) {
+            if (!input.trim()) return;
             await typeMessage(input, 'user');
             document.getElementById('chatInput').value = '';
             const typingDiv = document.createElement('div');
@@ -963,9 +744,7 @@
             await typeMessage(response, 'ai');
         }
         
-        // ============================================================
-        // MODE TOGGLE
-        // ============================================================
+        // UI Functions
         function applyModeUI() {
             const modeToggle = document.getElementById('modeToggle');
             const modeText = document.getElementById('modeText');
@@ -982,21 +761,15 @@
         function toggleMode() {
             isOfflineMode = !isOfflineMode;
             applyModeUI();
-            typeMessage(isOfflineMode ? 'Switched to OFFLINE MODE. I will use my embedded knowledge base. No internet required.' : 'Switched to ONLINE MODE. I will connect to quantum backends.', 'ai');
+            typeMessage(isOfflineMode ? 'Switched to OFFLINE MODE. Using embedded knowledge base.' : 'Switched to ONLINE MODE. Connecting to quantum backends.', 'ai');
         }
         
-        // ============================================================
-        // USER PROFILE
-        // ============================================================
         function loadUserProfile() {
             document.getElementById('userName').textContent = userProfile.name || 'User';
             document.getElementById('userEmail').textContent = userProfile.email || 'user@luvuno.ai';
             const avatarDiv = document.getElementById('profileAvatar');
-            if (userProfile.avatar) {
-                avatarDiv.innerHTML = `<img src="${userProfile.avatar}" style="width:100%;height:100%;object-fit:cover;">`;
-            } else {
-                avatarDiv.innerHTML = '<i class="fas fa-user-astronaut"></i>';
-            }
+            if (userProfile.avatar) avatarDiv.innerHTML = `<img src="${userProfile.avatar}">`;
+            else avatarDiv.innerHTML = '<i class="fas fa-user-astronaut"></i>';
         }
         
         function saveUserProfile(name, email, avatar) {
@@ -1007,18 +780,19 @@
             loadUserProfile();
         }
         
-        // ============================================================
-        // CHAT MANAGEMENT
-        // ============================================================
         function newChat() {
             activeSkill = null;
             quantumThinkMode = false;
-            document.getElementById('quantumThinkBox')?.classList.remove('active');
-            if (document.getElementById('quantumThinkStatus')) document.getElementById('quantumThinkStatus').innerText = 'OFF';
+            const qtBox = document.getElementById('quantumThinkBox');
+            if (qtBox) qtBox.classList.remove('active');
+            const qtStatus = document.getElementById('quantumThinkStatus');
+            if (qtStatus) qtStatus.innerText = 'OFF';
             document.querySelectorAll('.skill-btn').forEach(btn => btn.classList.remove('active'));
-            conversationHistory = [];
             currentChatId = 'chat_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4);
-            document.getElementById('messagesContainer').innerHTML = `<div class="message ai"><div class="message-avatar">🤖</div><div class="message-content"><p><strong>Hi, I'm Luvuno.</strong> Ready. ${isOfflineMode ? 'Offline mode active.' : 'Online mode active.'}</p><div class="message-time">⚛️</div></div></div>`;
+            const container = document.getElementById('messagesContainer');
+            if (container) {
+                container.innerHTML = `<div class="message ai"><div class="message-avatar">🤖</div><div class="message-content"><p><strong>Hi, I'm Luvuno.</strong> Ready.</p><div class="message-time">⚛️</div></div></div>`;
+            }
             loadChatHistoryList();
         }
         
@@ -1049,6 +823,7 @@
             const chats = JSON.parse(localStorage.getItem(getStorageKey('luvuno_chats')) || '{}');
             const messages = chats[chatId] || [];
             const container = document.getElementById('messagesContainer');
+            if (!container) return;
             container.innerHTML = '';
             if (messages.length === 0) {
                 container.innerHTML = `<div class="message ai"><div class="message-avatar">🤖</div><div class="message-content"><p>Ready.</p></div></div>`;
@@ -1070,13 +845,12 @@
         }
         
         function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
+            const modal = document.getElementById(id);
+            if (modal) modal.classList.remove('active');
         }
         window.closeModal = closeModal;
         
-        // ============================================================
-        // SKILL BUTTONS
-        // ============================================================
+        // Skills
         const primarySkills = [
             { id: "coding", icon: "fa-code", label: "Coding" },
             { id: "africanHistory", icon: "fa-globe-africa", label: "African History" },
@@ -1105,9 +879,7 @@
             }
         }
         
-        // ============================================================
-        // INITIALIZATION
-        // ============================================================
+        // Initialize App
         function initApp() {
             loadUserProfile();
             newChat();
@@ -1135,190 +907,258 @@
             });
             
             // Speed slider
-            document.getElementById('speedSlider').value = streamingSpeed;
-            document.getElementById('speedValue').innerText = streamingSpeed;
-            document.getElementById('speedSlider').oninput = () => {
-                streamingSpeed = parseInt(document.getElementById('speedSlider').value);
-                document.getElementById('speedValue').innerText = streamingSpeed;
-                localStorage.setItem('luvuno_speed', streamingSpeed);
-            };
+            const speedSlider = document.getElementById('speedSlider');
+            const speedValue = document.getElementById('speedValue');
+            if (speedSlider) {
+                speedSlider.value = streamingSpeed;
+                if (speedValue) speedValue.innerText = streamingSpeed;
+                speedSlider.oninput = () => {
+                    streamingSpeed = parseInt(speedSlider.value);
+                    if (speedValue) speedValue.innerText = streamingSpeed;
+                    localStorage.setItem('luvuno_speed', streamingSpeed);
+                };
+            }
             
-            // Font size slider
-            document.getElementById('fontSizeSlider').value = currentFontSize;
-            document.getElementById('fontSizeValue').innerText = currentFontSize;
-            document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
-            document.getElementById('fontSizeSlider').oninput = () => {
-                currentFontSize = parseInt(document.getElementById('fontSizeSlider').value);
-                document.getElementById('fontSizeValue').innerText = currentFontSize;
+            // Font size
+            const fontSizeSlider = document.getElementById('fontSizeSlider');
+            const fontSizeValue = document.getElementById('fontSizeValue');
+            if (fontSizeSlider) {
+                fontSizeSlider.value = currentFontSize;
+                if (fontSizeValue) fontSizeValue.innerText = currentFontSize;
                 document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
-                localStorage.setItem('luvuno_font_size', currentFontSize);
-            };
+                fontSizeSlider.oninput = () => {
+                    currentFontSize = parseInt(fontSizeSlider.value);
+                    if (fontSizeValue) fontSizeValue.innerText = currentFontSize;
+                    document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
+                    localStorage.setItem('luvuno_font_size', currentFontSize);
+                };
+            }
             
-            // QuantumThink toggle
-            document.getElementById('quantumThinkBox').onclick = () => {
-                quantumThinkMode = !quantumThinkMode;
-                document.getElementById('quantumThinkBox').classList.toggle('active', quantumThinkMode);
-                document.getElementById('quantumThinkStatus').innerText = quantumThinkMode ? 'ON' : 'OFF';
-                typeMessage(quantumThinkMode ? 'Quantum Reasoning mode activated.' : 'Quantum Reasoning mode deactivated.', 'ai');
-            };
+            // Quantum Think toggle
+            const qtBox = document.getElementById('quantumThinkBox');
+            const qtStatus = document.getElementById('quantumThinkStatus');
+            if (qtBox) {
+                qtBox.onclick = () => {
+                    quantumThinkMode = !quantumThinkMode;
+                    qtBox.classList.toggle('active', quantumThinkMode);
+                    if (qtStatus) qtStatus.innerText = quantumThinkMode ? 'ON' : 'OFF';
+                    typeMessage(quantumThinkMode ? 'Quantum Reasoning mode activated.' : 'Quantum Reasoning mode deactivated.', 'ai');
+                };
+            }
             
             // Mode toggle
-            document.getElementById('modeToggle').onclick = toggleMode;
+            const modeToggle = document.getElementById('modeToggle');
+            if (modeToggle) modeToggle.onclick = toggleMode;
             
-            // Send button
-            document.getElementById('sendBtn').onclick = async () => {
-                const msg = document.getElementById('chatInput').value.trim();
-                if (msg) await processUserInput(msg);
-            };
+            // Send button - CRITICAL FIX
+            const sendBtn = document.getElementById('sendBtn');
+            const chatInputField = document.getElementById('chatInput');
+            if (sendBtn) {
+                sendBtn.onclick = async () => {
+                    const msg = chatInputField ? chatInputField.value.trim() : '';
+                    if (msg) await processUserInput(msg);
+                };
+            }
             
-            // Enter key
-            document.getElementById('chatInput').addEventListener('keypress', (e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    document.getElementById('sendBtn').click();
-                }
-            });
+            // Enter key - CRITICAL FIX
+            if (chatInputField) {
+                chatInputField.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        const msg = chatInputField.value.trim();
+                        if (msg) processUserInput(msg);
+                    }
+                });
+            }
             
             // New chat
-            document.getElementById('newChatBtn').onclick = newChat;
+            const newChatBtn = document.getElementById('newChatBtn');
+            if (newChatBtn) newChatBtn.onclick = newChat;
             
             // Export PDF
-            document.getElementById('exportChatBtn').onclick = async () => {
-                const container = document.getElementById('messagesContainer').cloneNode(true);
-                const style = document.createElement('style');
-                style.textContent = `body { font-family: 'Exo 2', sans-serif; background: white; color: black; padding: 20px; } .message { margin: 16px 0; padding: 12px; border-radius: 12px; } .message.user { background: #e3f2fd; } .message.ai { background: #f5f5f5; } .message-avatar { display: none; } .message-actions { display: none; }`;
-                container.prepend(style);
-                html2pdf().set({ margin: 0.5, filename: `luvuno-export-${Date.now()}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 }, jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } }).from(container).save();
-            };
+            const exportBtn = document.getElementById('exportChatBtn');
+            if (exportBtn) {
+                exportBtn.onclick = async () => {
+                    const container = document.getElementById('messagesContainer').cloneNode(true);
+                    const style = document.createElement('style');
+                    style.textContent = `body { font-family: 'Exo 2', sans-serif; background: white; color: black; padding: 20px; } .message { margin: 16px 0; padding: 12px; border-radius: 12px; } .message.user { background: #e3f2fd; } .message.ai { background: #f5f5f5; } .message-avatar { display: none; } .message-actions { display: none; }`;
+                    container.prepend(style);
+                    html2pdf().set({ margin: 0.5, filename: `luvuno-export-${Date.now()}.pdf`, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 }, jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } }).from(container).save();
+                };
+            }
             
             // File upload
-            document.getElementById('attachBtn').onclick = () => document.getElementById('fileInput').click();
-            document.getElementById('fileInput').onchange = async (e) => {
-                const files = Array.from(e.target.files);
-                for (const file of files) {
-                    if (file.type === 'text/plain' || file.name.endsWith('.txt')) {
-                        const text = await file.text();
-                        await typeMessage(`📄 ${file.name}`, 'user');
-                        await processUserInput(`Analyze: ${text.substring(0, 3000)}`);
-                    } else {
-                        await typeMessage(`📎 ${file.name}`, 'user');
-                        await processUserInput(`I uploaded ${file.name}. What can you tell me?`);
+            const attachBtn = document.getElementById('attachBtn');
+            const fileInputEl = document.getElementById('fileInput');
+            if (attachBtn && fileInputEl) {
+                attachBtn.onclick = () => fileInputEl.click();
+                fileInputEl.onchange = async (e) => {
+                    const files = Array.from(e.target.files);
+                    for (const file of files) {
+                        if (file.type === 'text/plain' || file.name.endsWith('.txt')) {
+                            const text = await file.text();
+                            await typeMessage(`📄 ${file.name}`, 'user');
+                            await processUserInput(`Analyze: ${text.substring(0, 3000)}`);
+                        } else {
+                            await typeMessage(`📎 ${file.name}`, 'user');
+                            await processUserInput(`I uploaded ${file.name}. What can you tell me?`);
+                        }
                     }
-                }
-                document.getElementById('fileInput').value = '';
-            };
+                    fileInputEl.value = '';
+                };
+            }
             
             // Image upload
-            document.getElementById('imageBtn').onclick = () => document.getElementById('imageInput').click();
-            document.getElementById('imageInput').onchange = async (e) => {
-                if (e.target.files[0]) {
-                    await typeMessage(`📷 Image: ${e.target.files[0].name}`, 'user');
-                    await processUserInput(`I uploaded an image. Please help me understand it.`);
-                }
-                document.getElementById('imageInput').value = '';
-            };
+            const imageBtn = document.getElementById('imageBtn');
+            const imageInputEl = document.getElementById('imageInput');
+            if (imageBtn && imageInputEl) {
+                imageBtn.onclick = () => imageInputEl.click();
+                imageInputEl.onchange = async (e) => {
+                    if (e.target.files[0]) {
+                        await typeMessage(`📷 Image: ${e.target.files[0].name}`, 'user');
+                        await processUserInput(`I uploaded an image. Please help me understand it.`);
+                    }
+                    imageInputEl.value = '';
+                };
+            }
             
             // Voice input
-            if ('webkitSpeechRecognition' in window) {
+            const voiceButton = document.getElementById('voiceBtn');
+            if ('webkitSpeechRecognition' in window && voiceButton) {
                 let recognition = new webkitSpeechRecognition();
                 let isRecording = false;
                 recognition.continuous = false;
                 recognition.interimResults = false;
-                recognition.onstart = () => { document.getElementById('voiceBtn').classList.add('recording'); isRecording = true; };
-                recognition.onend = () => { document.getElementById('voiceBtn').classList.remove('recording'); isRecording = false; };
+                recognition.onstart = () => { voiceButton.classList.add('recording'); isRecording = true; };
+                recognition.onend = () => { voiceButton.classList.remove('recording'); isRecording = false; };
                 recognition.onresult = (event) => {
-                    document.getElementById('chatInput').value = event.results[0][0].transcript;
-                    document.getElementById('sendBtn').click();
+                    if (chatInputField) chatInputField.value = event.results[0][0].transcript;
+                    if (sendBtn) sendBtn.click();
                 };
-                document.getElementById('voiceBtn').onclick = () => {
+                voiceButton.onclick = () => {
                     if (isRecording) recognition.stop();
                     else recognition.start();
                 };
-            } else {
-                document.getElementById('voiceBtn').style.opacity = '0.5';
-                document.getElementById('voiceBtn').disabled = true;
+            } else if (voiceButton) {
+                voiceButton.style.opacity = '0.5';
+                voiceButton.disabled = true;
             }
             
             // Stop button
-            document.getElementById('stopBtn').onclick = () => {
-                if (currentController) {
-                    currentController.abort();
-                    currentController = null;
-                    isStreaming = false;
-                    typeMessage('[Response stopped]', 'ai');
-                }
-            };
+            const stopButton = document.getElementById('stopBtn');
+            if (stopButton) {
+                stopButton.onclick = () => {
+                    if (currentController) {
+                        currentController.abort();
+                        currentController = null;
+                        isStreaming = false;
+                        typeMessage('[Response stopped]', 'ai');
+                    }
+                };
+            }
             
             // Settings
-            document.getElementById('settingsBtn').onclick = () => {
-                document.getElementById('userNameInput').value = userProfile.name || '';
-                document.getElementById('userEmailInput').value = userProfile.email || '';
-                document.getElementById('settingsModal').classList.add('active');
-            };
-            document.getElementById('helpBtn').onclick = () => document.getElementById('helpModal').classList.add('active');
-            document.getElementById('profileCard').onclick = () => {
-                document.getElementById('userNameInput').value = userProfile.name || '';
-                document.getElementById('userEmailInput').value = userProfile.email || '';
-                document.getElementById('settingsModal').classList.add('active');
-            };
-            document.getElementById('saveSettingsBtn').onclick = () => {
-                const newName = document.getElementById('userNameInput').value;
-                const newEmail = document.getElementById('userEmailInput').value;
-                saveUserProfile(newName, newEmail, userProfile.avatar);
-                document.getElementById('settingsModal').classList.remove('active');
-                typeMessage('Settings saved.', 'ai');
-            };
+            const settingsButton = document.getElementById('settingsBtn');
+            const settingsModal = document.getElementById('settingsModal');
+            const userNameInput = document.getElementById('userNameInput');
+            const userEmailInput = document.getElementById('userEmailInput');
+            const saveSettingsButton = document.getElementById('saveSettingsBtn');
+            const helpButton = document.getElementById('helpBtn');
+            const helpModal = document.getElementById('helpModal');
+            const profileCardEl = document.getElementById('profileCard');
+            const logoutButton = document.getElementById('logoutBtn');
             
-            // Logout
-            document.getElementById('logoutBtn').onclick = () => {
-                if (confirm('Log out? History will be cleared.')) {
-                    const profileBackup = localStorage.getItem('luvuno_profile');
-                    localStorage.clear();
-                    if (profileBackup) localStorage.setItem('luvuno_profile', profileBackup);
-                    sessionStorage.clear();
-                    location.reload();
-                }
-            };
+            if (settingsButton && settingsModal) {
+                settingsButton.onclick = () => {
+                    if (userNameInput) userNameInput.value = userProfile.name || '';
+                    if (userEmailInput) userEmailInput.value = userProfile.email || '';
+                    settingsModal.classList.add('active');
+                };
+            }
+            if (helpButton && helpModal) helpButton.onclick = () => helpModal.classList.add('active');
+            if (profileCardEl && settingsModal) {
+                profileCardEl.onclick = () => {
+                    if (userNameInput) userNameInput.value = userProfile.name || '';
+                    if (userEmailInput) userEmailInput.value = userProfile.email || '';
+                    settingsModal.classList.add('active');
+                };
+            }
+            if (saveSettingsButton && settingsModal) {
+                saveSettingsButton.onclick = () => {
+                    const newName = userNameInput ? userNameInput.value : 'User';
+                    const newEmail = userEmailInput ? userEmailInput.value : 'user@luvuno.ai';
+                    saveUserProfile(newName, newEmail, userProfile.avatar);
+                    settingsModal.classList.remove('active');
+                    typeMessage('Settings saved.', 'ai');
+                };
+            }
+            if (logoutButton) {
+                logoutButton.onclick = () => {
+                    if (confirm('Log out? History will be cleared.')) {
+                        const profileBackup = localStorage.getItem('luvuno_profile');
+                        localStorage.clear();
+                        if (profileBackup) localStorage.setItem('luvuno_profile', profileBackup);
+                        sessionStorage.clear();
+                        location.reload();
+                    }
+                };
+            }
             
             // Avatar upload
-            document.getElementById('uploadAvatarBtn').onclick = () => document.getElementById('avatarInput').click();
-            document.getElementById('avatarInput').onchange = (e) => {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = (event) => {
-                        saveUserProfile(undefined, undefined, event.target.result);
-                        document.getElementById('avatarPreview').innerHTML = `<img src="${event.target.result}">`;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            document.getElementById('removeAvatarBtn').onclick = () => {
-                saveUserProfile(undefined, undefined, null);
-                document.getElementById('avatarPreview').innerHTML = '<i class="fas fa-user-astronaut"></i>';
-            };
+            const uploadAvatar = document.getElementById('uploadAvatarBtn');
+            const removeAvatar = document.getElementById('removeAvatarBtn');
+            const avatarFileInput = document.getElementById('avatarInput');
+            const avatarPreview = document.getElementById('avatarPreview');
+            if (uploadAvatar && avatarFileInput) {
+                uploadAvatar.onclick = () => avatarFileInput.click();
+                avatarFileInput.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (file && file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            saveUserProfile(undefined, undefined, event.target.result);
+                            if (avatarPreview) avatarPreview.innerHTML = `<img src="${event.target.result}">`;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+            }
+            if (removeAvatar) {
+                removeAvatar.onclick = () => {
+                    saveUserProfile(undefined, undefined, null);
+                    if (avatarPreview) avatarPreview.innerHTML = '<i class="fas fa-user-astronaut"></i>';
+                };
+            }
             
-            // Mobile menu toggle
-            document.getElementById('menuToggle').onclick = () => document.getElementById('sidebar').classList.toggle('open');
+            // Mobile menu
+            const menuToggleBtn = document.getElementById('menuToggle');
+            const sidebarEl = document.getElementById('sidebar');
+            if (menuToggleBtn && sidebarEl) {
+                menuToggleBtn.onclick = () => sidebarEl.classList.toggle('open');
+            }
             
             // Scroll button
             const msgContainer = document.getElementById('messagesContainer');
             const scrollBtn = document.getElementById('scrollDownBtn');
-            msgContainer.addEventListener('scroll', () => {
-                const nearBottom = msgContainer.scrollHeight - msgContainer.scrollTop - msgContainer.clientHeight < 100;
-                scrollBtn.classList.toggle('show', !nearBottom);
-            });
-            scrollBtn.onclick = () => msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior: 'smooth' });
+            if (msgContainer && scrollBtn) {
+                msgContainer.addEventListener('scroll', () => {
+                    const nearBottom = msgContainer.scrollHeight - msgContainer.scrollTop - msgContainer.clientHeight < 100;
+                    scrollBtn.classList.toggle('show', !nearBottom);
+                });
+                scrollBtn.onclick = () => msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior: 'smooth' });
+            }
             
             // Connection status
             function checkConnection() {
                 const badge = document.getElementById('connectionBadge');
-                if (!navigator.onLine) {
-                    badge.innerHTML = '⚠️ OFFLINE';
-                    badge.classList.add('offline-badge');
-                } else {
-                    badge.innerHTML = '⚛️ 98.4%';
-                    badge.classList.remove('offline-badge');
+                if (badge) {
+                    if (!navigator.onLine) {
+                        badge.innerHTML = '⚠️ OFFLINE';
+                        badge.classList.add('offline-badge');
+                    } else {
+                        badge.innerHTML = '⚛️ 98.4%';
+                        badge.classList.remove('offline-badge');
+                    }
                 }
             }
             window.addEventListener('online', checkConnection);
@@ -1327,11 +1167,16 @@
         }
         
         // Login
-        document.getElementById('demoLoginBtn').onclick = () => {
-            document.getElementById('loginOverlay').style.display = 'none';
-            document.getElementById('appContainer').style.display = 'flex';
-            initApp();
-        };
+        const loginBtn = document.getElementById('demoLoginBtn');
+        if (loginBtn) {
+            loginBtn.onclick = () => {
+                const overlay = document.getElementById('loginOverlay');
+                const container = document.getElementById('appContainer');
+                if (overlay) overlay.style.display = 'none';
+                if (container) container.style.display = 'flex';
+                initApp();
+            };
+        }
         
         // Particles
         particlesJS('particles-js', {
@@ -1347,8 +1192,7 @@
             interactivity: { events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } } }
         });
         
-        console.log("✅ LUVUNO — Complete Ultimate Version | No brackets | Offline/Online | Mobile optimized");
-        console.log("   Features: 10 skills, Quantum reasoning, Streaming, Voice, File upload, Export, Profile, History");
+        console.log("✅ LUVUNO — Fully Working | Enter sends | No brackets | Offline/Online toggle");
     </script>
 </body>
 </html>
